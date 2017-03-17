@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <!--  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> -->
+    <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1"> -->
+<!--     <meta name="viewport" content="user-scalable=no, initial-scale=1,
+        maximum-scale=1, minimum-scale=1" /> -->
+
+
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-px" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+    <!-- Compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"> -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <!-- Compiled and minified JavaScript
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>  -->
+    <title>Primax</title>
+</head>
+
+<body>
+    <div data-role="page" class="page-container" id="main-page">
+        <div role="main" class="ui-content" data-theme="a">
+            <img src="img/agente-primax.png" class="logo-main" />
+            <div class="form-holder">
+                <input id="txt_cedula" placeholder="Usuario" class=" ui-btn-icon-right" />
+                <button onclick="changePage()" class="btn-ingresar">INGRESAR</button>
+            </div>
+            <img src="img/primax-logo.png" class="horizontal-center img-logo" />
+        </div>
+    </div>
+    <!--
+
+
+    MAIN SCREEN
+
+
+    -->
+    <div data-role="page" class="page-container" id="page2">
+        <div data-role="header" class="header-style" data-position="fixed"  data-tap-toggle="false">
+
+            <h1 class="username">&nbsp;</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div class="header-img">
+                <img src="img/top.png" class="top-header-img" />
+            </div>
+            <div>
+                <div class="time-container">
+                </div>
+                <div class="date-container">
+                    <div class="fecha-text"></div>
+                    <div>Guayaquil, Ecuador</div>
+                </div>
+            </div>
+            <div>
+                <!--  <ul data-role="listview" class="lv_location_holder">
+                    <li><a href="#" class="lv_location">SELECCIONAR ESTACIÓN</a></li>
+                    <li><a href="#" class="lv_location">SELECCIONAR ISLA</a></li>
+                </ul> -->
+                <button onclick="gotoCity()" class="btn-continuar">Continuar</button>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="footer">
+            <img src="img/agente-mini.png" class="horizontal-center" />
+        </div>
+    </div>
+    <!--
+
+
+    CITIES SCREEN
+
+
+    -->
+    <div data-role="page" class="page-container" id="cities-screen">
+        <div data-role="header" class="header-style">
+        <a href="#" data-rel="back" class="btn-back" ></a>
+            <h1>Ciudad</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <form class="ui-filterable">
+                <input id="myFilter" data-type="search" placeholder="Buscar ciudad...">
+            </form>
+            <ul data-role="listview" data-filter="true" data-input="#myFilter">
+                     <li class="list-item-lnk" data-id="21"> <a href="#"> AMBATO</a></li>
+            <li class="list-item-lnk" data-id="22"> <a href="#"> ARCHIDONA</a></li>
+            <li class="list-item-lnk" data-id="23"> <a href="#"> AZOGUES</a></li>
+            <li class="list-item-lnk" data-id="24"> <a href="#"> BAHIA</a></li>
+            <li class="list-item-lnk" data-id="25"> <a href="#"> BAÑOS</a></li>
+
+                <li class="list-item-lnk" data-id="1"> <a href="#"> BABAHOYO</a></li>
+                <li class="list-item-lnk" data-id="2"> <a href="#"> CANTON RUMIÑAHUI</a></li>
+                <li class="list-item-lnk" data-id="3"> <a href="#"> CAYAMBE</a></li>
+                <li class="list-item-lnk" data-id="4"> <a href="#"> CUENCA</a></li>
+                <li class="list-item-lnk" data-id="5"> <a href="#"> COTOCOLLAO</a></li>
+                <li class="list-item-lnk" data-id="26"> <a href="#"> CAMILO PONCE</a></li>
+                <li class="list-item-lnk" data-id="27"> <a href="#"> CATAMAYO</a></li>
+                <li class="list-item-lnk" data-id="6"> <a href="#"> DAULE</a></li>
+                <li class="list-item-lnk" data-id="7"> <a href="#"> DURAN</a></li>
+                <li class="list-item-lnk" data-id="8"> <a href="#"> EL GUABO</a></li>
+                <li class="list-item-lnk" data-id="9"> <a href="#"> EMPALME</a></li>
+                <li class="list-item-lnk" data-id="10"> <a href="#"> ESMERALDAS</a></li>
+                <li class="list-item-lnk" data-id="28"> <a href="#"> EL CARMEN</a></li>
+                <li class="list-item-lnk" data-id="29"> <a href="#"> EL CHACO</a></li>
+                <!-- <li class="list-item-lnk" data-id="30"> <a href="#"> EL ORO</a></li> -->
+                <li class="list-item-lnk" data-id="11"> <a href="#"> GUAYAQUIL</a></li>
+                <li class="list-item-lnk" data-id="31"> <a href="#"> HUAQUILLAS</a></li>
+                <li class="list-item-lnk" data-id="32"> <a href="#"> IBARRA</a></li>
+                <li class="list-item-lnk" data-id="33"> <a href="#"> ISIDRO AYORA</a></li>
+                <li class="list-item-lnk" data-id="34"> <a href="#"> JIPIJAPA</a></li>
+                <li class="list-item-lnk" data-id="35"> <a href="#"> LA TRONCAL</a></li>
+                <li class="list-item-lnk" data-id="36"> <a href="#"> LOJA</a></li>
+                <li class="list-item-lnk" data-id="12"> <a href="#"> LA LIBERTADAD</a></li>
+                <li class="list-item-lnk" data-id="13"> <a href="#"> MACHALA</a></li>
+                <li class="list-item-lnk" data-id="14"> <a href="#"> MANTA</a></li>
+                <!-- <li class="list-item-lnk" data-id="37"> <a href="#"> MACHALA</a></li> -->
+                <li class="list-item-lnk" data-id="38"> <a href="#"> MEJIA</a></li>
+                <li class="list-item-lnk" data-id="39"> <a href="#"> MONTECRISTI</a></li>
+                <li class="list-item-lnk" data-id="15"> <a href="#"> MILAGRO</a></li>
+                <li class="list-item-lnk" data-id="40"> <a href="#"> NARANJAL</a></li>
+                <li class="list-item-lnk" data-id="41"> <a href="#"> PAJAN</a></li>
+                <li class="list-item-lnk" data-id="42"> <a href="#"> PATRICIA PILAR</a></li>
+                <li class="list-item-lnk" data-id="43"> <a href="#"> PAUTE</a></li>
+                <li class="list-item-lnk" data-id="44"> <a href="#"> PEDERNALES</a></li>
+                <li class="list-item-lnk" data-id="45"> <a href="#"> PEDRO MONCAYO</a></li>
+                <li class="list-item-lnk" data-id="46"> <a href="#"> PLAYAS</a></li>
+                <li class="list-item-lnk" data-id="47"> <a href="#"> PORTOVELO</a></li>
+                <li class="list-item-lnk" data-id="48"> <a href="#"> PORTOVIEJO</a></li>
+                <li class="list-item-lnk" data-id="16"> <a href="#"> PROGRESO</a></li>
+                <li class="list-item-lnk" data-id="49"> <a href="#"> QUININDE</a></li>
+                <li class="list-item-lnk" data-id="17"> <a href="#"> QUITO</a></li>
+                <li class="list-item-lnk" data-id="50"> <a href="#"> RIOBAMBA</a></li>
+                <li class="list-item-lnk" data-id="51"> <a href="#"> ROCAFUERTE</a></li>
+                <li class="list-item-lnk" data-id="52"> <a href="#"> RUMIÑAHUI</a></li>
+                <li class="list-item-lnk" data-id="53"> <a href="#"> SALCEDO</a></li>
+                <li class="list-item-lnk" data-id="18"> <a href="#"> SAMBORONDON</a></li>
+                <li class="list-item-lnk" data-id="20"> <a href="#"> SANTO DOMINGO</a></li>
+                <!-- <li class="list-item-lnk" data-id="19"> <a href="#"> SANTA ELENA</a></li> -->
+                <li class="list-item-lnk" data-id="54"> <a href="#"> SAN VICENTE</a></li>
+                <li class="list-item-lnk" data-id="55"> <a href="#"> SANTA ELENA</a></li>
+                <li class="list-item-lnk" data-id="56"> <a href="#"> SANTA ISABEL</a></li>
+                <li class="list-item-lnk" data-id="57"> <a href="#"> SHUSHUFINDI</a></li>
+                <li class="list-item-lnk" data-id="58"> <a href="#"> SUCRE</a></li>
+                <li class="list-item-lnk" data-id="59"> <a href="#"> VINCES</a></li>
+                <li class="list-item-lnk" data-id="60"> <a href="#"> YAGUACHI</a></li>
+            </ul>
+        </div>
+        <div  data-role="footer" data-position="fixed" data-tap-toggle="false" data-enhance="false" class="footer">
+            <img src="img/agente-mini.png" class="horizontal-center" />
+        </div>
+    </div>
+    <!--
+
+
+    STATION SCREEN
+
+
+    -->
+    <div data-role="page" class="page-container" id="station-screen">
+        <div data-role="header" class="header-style">
+        <a href="#" data-rel="back" class="btn-back" ></a>
+            <h1>Estación</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <form class="ui-filterable">
+                <input id="myFilterStation" data-type="search" placeholder="Buscar estación...">
+            </form>
+            <ul id="#lv-stations" data-role="listview" data-filter="true" data-input="#myFilterStation" class="lv-stations">
+                <!-- <li class="list-item-lnk"><a href="#">Av. F. Orellana</a></li>
+                <li class="list-item-lnk"><a href="#">Av. Quito</a></li>
+                <li class="list-item-lnk"><a href="#">Via Samborondon</a></li> -->
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="footer">
+            <img src="img/agente-mini.png" class="horizontal-center" />
+        </div>
+    </div>
+    <!--
+
+
+    ISLAND SCREEN
+
+
+    -->
+    <div data-role="page" class="page-container" id="islands-screen">
+        <div data-role="header" class="header-style"  data-position="fixed">
+        <a href="#" data-rel="back" class="btn-back" ></a>
+            <h1>Isla</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <form class="ui-filterable">
+                <input id="myFilterIslands" data-type="search" placeholder="Buscar isla...">
+            </form>
+            <ul data-role="listview" data-filter="true" data-input="#myFilterIslands">
+                <li class="list-item-lnk" data-id="1"><a href="#">Isla 1 </a></li>
+                <li class="list-item-lnk" data-id="2"><a href="#">Isla 2</a></li>
+                <li class="list-item-lnk" data-id="3"><a href="#">Isla 3 </a></li>
+                <li class="list-item-lnk" data-id="4"><a href="#">Isla 4 </a></li>
+                <li class="list-item-lnk" data-id="5"><a href="#">Isla 5 </a></li>
+                <li class="list-item-lnk" data-id="6"><a href="#">Isla 6 </a></li>
+                <li class="list-item-lnk" data-id="7"><a href="#">Isla 7 </a></li>
+                <li class="list-item-lnk" data-id="8"><a href="#">Isla 8 </a></li>
+                <li class="list-item-lnk" data-id="9"><a href="#">Isla 9 </a></li>
+                <li class="list-item-lnk" data-id="10"><a href="#">Isla 10 </a></li>
+                <li class="list-item-lnk" data-id="11"><a href="#">Isla 11 </a></li>
+                <li class="list-item-lnk" data-id="12"><a href="#">Isla 12 </a></li>
+                <li class="list-item-lnk" data-id="13"><a href="#">Isla 13 </a></li>
+                <li class="list-item-lnk" data-id="14"><a href="#">Isla 14 </a></li>
+                <li class="list-item-lnk" data-id="15"><a href="#">Isla 15 </a></li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="footer">
+            <img src="img/agente-mini.png" class="horizontal-center" />
+        </div>
+    </div>
+    <!--
+
+
+    QUESTIONS SCREEN
+
+
+    -->
+    <div data-role="page" class="page-container" id="questions-screen"  data-add-back-btn="true">
+        <div data-role="header" class="header-style"  data-position="fixed"  data-tap-toggle="false" >
+        <a href="#" data-rel="back" class="btn-back" ></a>
+            <h1>Preguntas</h1>
+            <a href="#" class="ui-btn-right" data-icon="camera" id="btn-camera" data-theme="b">Camara</a>
+        </div>
+        <div role="main" class="ui-content form-container">
+        <form id="form_questions" >
+            <div class="question-holder">
+                1. Al llegar a la estación el saludo fue: buenos dias/tardes/noches bienvenido a primax. ¿cuánto le ponemos de super?
+            </div>
+            <div class="answers-holder">
+                <label>
+                    <input type="radio" name="question1" value="1" />Si
+                </label>
+                <label>
+                    <input type="radio" name="question1" value="0" />No
+                </label>
+            </div>
+            <div class="question-holder">
+                2. ¿Te pidieron apagar el motor antes de tanquear?
+            </div>
+            <div class="answers-holder">
+                <label>
+                    <input type="radio" name="question2" value="1" />Si
+                </label>
+                <label>
+                    <input type="radio" name="question2" value="0" />No
+                </label>
+            </div>
+            <div class="question-holder">
+                3. ¿Te indicaron  marcador en cero antes de empezar a tanquear?
+            </div>
+            <div class="answers-holder">
+                <label>
+                    <input type="radio" name="question3" value="1" />Si
+                </label>
+                <label>
+                    <input type="radio" name="question3" value="0" />No
+                </label>
+                <label>
+            </div>
+            <div class="question-holder">
+                4. ¿Qué servicio adicional te ofrecieron? 
+            </div>
+            <div class="answers-holder">
+                <label>
+                    <input type="radio" name="question4" value="1" />Limpieza de parabrizas
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="2" />Tacho para botar desperdicios
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="3" />Venta de lubricantes
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="4" />Ninguno
+                </label>
+            </div>
+            <div class="question-holder">
+                5. ¿Te ofrecieron alguna promoción?
+            </div>
+            <div class="answers-holder">
+                <label>
+                    <input type="radio" name="question5" value="1" />Si
+                </label>
+                <label>
+                    <input type="radio" name="question5" value="0" />No
+                </label>
+                <label>
+                    <textarea cols="40" rows="8" name="textarea-6" id="txt-missing" placeholder="¿Cuál?"></textarea>
+                </label>
+            </div>
+            <div class="question-holder">
+                6. Acerca de la facturación:
+            </div>
+            <div class="answers-holder">
+                <fieldset data-role="controlgroup" data-iconpos="right">
+                    <input type="checkbox" name="chk_adicionales" id="chk_adicionales_basura">
+                    <label for="chk_adicionales_basura">Me pidieron datos para emitir la factura</label>
+
+                    <input type="checkbox" name="chk_adicionales" id="chk_adicionales_parabrisa">
+                    <label for="chk_adicionales_parabrisa">Me preguntaron si quería factura con datos o comsumidor final</label>
+
+                    <input type="checkbox" name="chk_adicionales" id="chk_adicionales_lubricantes">
+                    <label for="chk_adicionales_lubricantes">Me preguntaron si quería factura</label>
+
+                    <input type="checkbox" name="chk_adicionales" id="chk_adicionales_lubricantes">
+                    <label for="chk_adicionales_lubricantes">Si no pido factura no la entregan</label>
+                </fieldset>
+
+
+
+            </div>
+            <div class="question-holder">
+                7. Se despidió diciendo: “gracias por venir a primax”
+            </div>
+            <div class="answers-holder">
+                <label>
+                    <input type="radio" name="question7" value="1" />Si
+                </label>
+                <label>
+                    <input type="radio" name="question7" value="0" />No
+                </label>
+            </div>
+            <div class="question-holder">
+                8. ¿Cuál era el aspecto general del promotor?
+            </div>
+            <div class="answers-holder">
+                <fieldset data-role="controlgroup" data-iconpos="right">
+                    <input type="checkbox" name="checkbox-h-6a" id="checkbox-h-6a">
+                    <label for="checkbox-h-6a">Uniforme completo y en buen estado</label>
+                    <input type="checkbox" name="checkbox-h-6b" id="checkbox-h-6b">
+                    <label for="checkbox-h-6b">Uniforme completo pero no estaba en buen estado</label>
+                    <input type="checkbox" name="checkbox-h-6c" id="checkbox-h-6c">
+                    <label for="checkbox-h-6c">No tenia el uniforme completo</label>
+                    <input type="checkbox" name="checkbox-h-6d" id="checkbox-h-6d">
+                    <label for="checkbox-h-6d">    No tenía el uniforme completo y no estaba en buen estado</label>
+                </fieldset>
+
+                <label>
+                    <textarea cols="40" rows="8" name="textarea-6" id="txt-missing" placeholder="Comentarios?"></textarea>
+                </label>
+            </div>
+            <div class="question-holder">
+                9. ¿cuál era la ubicación del promotor cuando llegaste a la estación?
+            </div>
+            <div class="answers-holder">
+                
+                <label>
+                    <textarea cols="40" rows="8" name="textarea-6" id="txt-missing" placeholder=""></textarea>
+                </label>
+                
+                
+            </div>
+
+
+            <div class="send-holder img-holder">
+                    <img style="display:none;width:90%; margin:auto;" id="smallImage" src="" />
+                    <img style="display:none;" id="largeImage" src="" />
+            </div>
+
+
+
+
+            </form>
+            <div class="send-holder">
+            <button class="btn-continuar" id="btn-send-form">Enviar</button>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="footer">
+            <img src="img/agente-mini.png" class="horizontal-center" />
+        </div>
+    </div>
+    <!--
+
+
+    THANKS SCREEN
+
+
+    -->
+    <div data-role="page" class="page-container" id="thanks-screen" >
+        <div data-role="header" class="header-style">
+            <h1 class="username"></h1>
+        </div>
+        <div role="main" class="ui-content">
+         <div class="header-img">
+                <img src="img/thanks.png" class="top-header-img" />
+            </div>
+
+            <div class="final-container">
+                <!-- <img src="img/thanks.png" /> -->
+                <button class="btn-continuar" onclick="goHome()">Nueva encuesta</button>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="footer">
+            <img src="img/agente-mini.png" class="horizontal-center" />
+        </div>
+    </div>
+    <script type="text/javascript">
+    app.initialize();
+    </script>
+</body>
+
+</html>
