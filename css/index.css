@@ -149,8 +149,8 @@ min-height: 550px;
     
     
     padding: 0 !important;
-    margin: -1em;
-    margin-bottom: 20px;
+    /*margin: -1em;
+    margin-bottom: 20px;*/
 }
 
 .btn-continuar {
@@ -281,11 +281,14 @@ box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
 
 #page2{
     display: block;
-}*/
-
+}
+*/
 .ui-content,
 .header-img{
     position: relative;
+}
+.footer{
+    text-align: center;
 }
 .bubble{
     background-color: #0a8ccc;
@@ -320,7 +323,7 @@ box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
     width: 0;
     height: 0;
     right: 69px;
-    top: 46px;
+    top: 40px;
     border: 16px solid;
     border-color: #0a8ccc transparent transparent #0a8ccc;
 }
