@@ -111,7 +111,7 @@ function changePage() {
 
     //LOGIN VALIDATION
 
-    $.ajax({
+    /*$.ajax({
         url: 'http://www.ciancorp.com/primax/services/login.php',
         type: "post",
         cache: false,
@@ -157,9 +157,70 @@ function changePage() {
             }, "ERROR", "OK");
 
         }
+    });*/
+
+    $.ajax({
+        url: 'http://www.ciancorp.com/primax/services/login.php',
+        type: "post",
+        cache: false,
+        data: {
+            "user": $('#txt_cedula').val()
+        },
+        //dataType: "json",
+        success: function(response) {
+
+            if (response!='null') {
+                var hora = hh_mm();
+                var fecha = yyyy_mm_dd();
+                $('.time-container').html(hora);
+                $('.fecha-text').html(fecha);
+                name = response.user_name;
+                user_id = response.user_id;
+                city_id = response.city_id;
+                city_name = response.city_name;
+                group_id = response.grupo_id;
+                group_name = response.grupo_name;
+                station1_id = response.estacion1_id;
+                station1_name = response.estacion1_name;
+                station2_id = response.estacion2_id;
+                station2_name = response.estacion2_name;
+                $('.username').html($('#txt_cedula').val());
+
+                //carga ciudades
+                $('#listaCities').append('<li class="list-item-lnk" data-id="'+city_id+'"> <a href="#"> '+city_name+'</a></li>');
+                //$('#listaCities')
+
+                $('.lv-stations').append('<li class="list-item-lnk" data-id="' + station1_id + '"><a href="#">' + station1_name + '</a></li>');
+                $('.lv-stations').append('<li class="list-item-lnk" data-id="' + station2_id + '"><a href="#">' + station2_name + '</a></li>');
+                $('#lv-stations').listview("refresh");
+
+                $('.username span').html($('#txt_cedula').val());
+                $('.group span').html(group_name);
+
+                $.mobile.changePage("#page2", {
+                    transition: "slide"
+                });
+            } else {
+                navigator.notification.alert("Error al hacer login.", function() {
+                    null
+                }, "ERROR", "OK");
+            }
+
+        },
+        beforeSend: function() {
+            $.mobile.loading('show');
+        },
+        complete: function() {
+            $.mobile.loading('hide');
+        }, //Hide spinner
+        error: function(error) {
+            $.mobile.loading('hide');
+            navigator.notification.alert("Error en la conexion.", function() {
+                null
+            }, "ERROR", "OK");
+
+        }
     });
-
-
 }
 
 
