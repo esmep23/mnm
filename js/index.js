@@ -246,10 +246,8 @@ function gotoCity() {
         s_city = $(this).attr('data-id');
         gotoStation();
 
-        $('#cities-screen .list-item-lnk').unbind("click");
-        setTimeout(function(){
-            $('#cities-screen .list-item-lnk').bind("click");
-        }, 5000);
+        //$('#cities-screen .list-item-lnk').unbind("click");
+        
     });
     $.mobile.changePage("#cities-screen", {
         transition: "slide"
@@ -274,10 +272,8 @@ function gotoIsland() {
         $.mobile.changePage("#questions-screen", {
             transition: "slide"
         });
-        $('#islands-screen .list-item-lnk').unbind("click");
-        setTimeout(function(){
-            $('#islands-screen .list-item-lnk').bind("click");
-        }, 5000);
+        //$('#islands-screen .list-item-lnk').unbind("click");
+        
     });
     $.mobile.changePage("#islands-screen", {
         transition: "slide"
