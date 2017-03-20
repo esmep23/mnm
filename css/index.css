@@ -272,3 +272,34 @@ border: 0 !important;
     -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
 box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
 }
+
+
+.ui-content{
+    position: relative;
+}
+.bubble{
+    background-color: #0a8ccc;
+    border-radius: 5px;
+    color: white;
+    position: absolute;
+}
+.bubble.username{
+    font-size: x-large;
+    text-align: center;
+    padding: 2% 9%;
+    left: 15%;
+    top: 3%;
+}
+.bubble.group{
+    text-align: center;
+    padding: 2% 4%;
+    font-size: 0.8em;
+    font-weight: 200;
+    /* -- -- -- */
+    top: 20%;
+    left: 5%;
+}
+.bubble span{
+    color: #ffe600;
+    font-size: 1.2em;
+}

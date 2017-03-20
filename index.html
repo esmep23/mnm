@@ -67,9 +67,11 @@
     <div data-role="page" class="page-container" id="page2">
         <div data-role="header" class="header-style" data-position="fixed"  data-tap-toggle="false">
 
-            <h1 class="username">&nbsp;</h1>
+            <!--<h1 class="username">&nbsp;</h1>-->
         </div>
         <div role="main" class="ui-content">
+            <div class="username bubble">Bienvenido Agente <span>ECJHE0</span></div>
+            <div class="group bubble">Perteneces <br/> al grupo <br/><span>AGENTE 007</span></div>
             <div class="header-img">
                 <img src="img/top.png" class="top-header-img" />
             </div>
@@ -306,6 +308,7 @@
                 <label>
                     <input type="radio" name="question4" value="4" />Ninguno
                 </label>
+
             </div>
             <div class="question-holder">
                 5. ¿Te ofrecieron alguna promoción?
@@ -318,32 +321,29 @@
                     <input type="radio" name="question5" value="0" />No
                 </label>
                 <label>
-                    <textarea cols="40" rows="8" name="textarea-6" id="txt-missing" placeholder="¿Cuál?"></textarea>
+                    <textarea cols="40" rows="8" name="textarea-5" id="txt-missing" placeholder="¿Cuál?"></textarea>
                 </label>
             </div>
             <div class="question-holder">
                 6. Acerca de la facturación:
             </div>
             <div class="answers-holder">
-                <fieldset data-role="controlgroup" data-iconpos="right">
-                    <input type="checkbox" name="chk_adicionales" id="chk_adicionales_basura">
-                    <label for="chk_adicionales_basura">Me pidieron datos para emitir la factura</label>
-
-                    <input type="checkbox" name="chk_adicionales" id="chk_adicionales_parabrisa">
-                    <label for="chk_adicionales_parabrisa">Me preguntaron si quería factura con datos o comsumidor final</label>
-
-                    <input type="checkbox" name="chk_adicionales" id="chk_adicionales_lubricantes">
-                    <label for="chk_adicionales_lubricantes">Me preguntaron si quería factura</label>
-
-                    <input type="checkbox" name="chk_adicionales" id="chk_adicionales_lubricantes">
-                    <label for="chk_adicionales_lubricantes">Si no pido factura no la entregan</label>
-                </fieldset>
-
-
+                <label>
+                    <input type="radio" name="question6" value="1" />Me pidieron datos para emitir la factura
+                </label>
+                <label>
+                    <input type="radio" name="question6" value="2" />Me preguntaron si quería factura con datos o comsumidor final
+                </label>
+                <label>
+                    <input type="radio" name="question6" value="3" />Me preguntaron si quería factura
+                </label>
+                <label>
+                    <input type="radio" name="question6" value="4" />Si no pido factura no la entregan
+                </label>
 
             </div>
             <div class="question-holder">
-                7. Se despidió diciendo: “gracias por venir a primax”
+                7. Se despidió diciendo: "gracias por venir a primax"
             </div>
             <div class="answers-holder">
                 <label>
@@ -365,11 +365,11 @@
                     <input type="checkbox" name="checkbox-h-6c" id="checkbox-h-6c">
                     <label for="checkbox-h-6c">No tenia el uniforme completo</label>
                     <input type="checkbox" name="checkbox-h-6d" id="checkbox-h-6d">
-                    <label for="checkbox-h-6d">    No tenía el uniforme completo y no estaba en buen estado</label>
+                    <label for="checkbox-h-6d">No tenía el uniforme completo y no estaba en buen estado</label>
                 </fieldset>
 
                 <label>
-                    <textarea cols="40" rows="8" name="textarea-6" id="txt-missing" placeholder="Comentarios?"></textarea>
+                    <textarea cols="40" rows="8" name="textarea-8" id="txt-missing" placeholder="Comentarios?"></textarea>
                 </label>
             </div>
             <div class="question-holder">
@@ -378,7 +378,7 @@
             <div class="answers-holder">
                 
                 <label>
-                    <textarea cols="40" rows="8" name="textarea-6" id="txt-missing" placeholder=""></textarea>
+                    <textarea cols="40" rows="8" name="textarea-9" id="txt-missing" placeholder=""></textarea>
                 </label>
                 
                 

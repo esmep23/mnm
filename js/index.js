@@ -118,7 +118,7 @@ function changePage() {
         data: {
             "user": $('#txt_cedula').val()
         },
-        //dataType: "json",
+        dataType: "json",
         success: function(response) {
 
             if (response.status > 0) {
@@ -128,7 +128,10 @@ function changePage() {
                 $('.fecha-text').html(fecha);
                 name = response.nombre;
                 user_id = response.status;
-                $('.username').html($('#txt_cedula').val());
+
+                grupo = response.grupo_name;
+                $('.username span').html($('#txt_cedula').val());
+                $('.group span').html(grupo);
 
 
                 $.mobile.changePage("#page2", {
