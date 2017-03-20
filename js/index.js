@@ -118,7 +118,7 @@ function changePage() {
         data: {
             "user": $('#txt_cedula').val()
         },
-        dataType: "json",
+        //dataType: "json",
         success: function(response) {
 
             if (response.status > 0) {
