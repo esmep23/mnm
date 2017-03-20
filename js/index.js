@@ -184,7 +184,7 @@ function changePage() {
                 station1_name = response.estacion1_name;
                 station2_id = response.estacion2_id;
                 station2_name = response.estacion2_name;
-                $('.username').html($('#txt_cedula').val());
+                $('.username span').html($('#txt_cedula').val());
 
                 //carga ciudades
                 $('#listaCities').append('<li class="list-item-lnk" data-id="'+city_id+'"> <a href="#"> '+city_name+'</a></li>');
