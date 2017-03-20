@@ -274,14 +274,14 @@ border: 0 !important;
     -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
 box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
 }
-
+/*
 #main-page{
     display: none;
 }
 
 #page2{
     display: block;
-}
+}*/
 
 .ui-content,
 .header-img{
