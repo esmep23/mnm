@@ -245,7 +245,11 @@ function gotoCity() {
         //$.mobile.changePage("#station-screen");
         s_city = $(this).attr('data-id');
         gotoStation();
+
         $('#cities-screen .list-item-lnk').unbind("click");
+        setTimeout(function(){
+            $('#cities-screen .list-item-lnk').bind("click");
+        }, 5000);
     });
     $.mobile.changePage("#cities-screen", {
         transition: "slide"
@@ -271,6 +275,9 @@ function gotoIsland() {
             transition: "slide"
         });
         $('#islands-screen .list-item-lnk').unbind("click");
+        setTimeout(function(){
+            $('#islands-screen .list-item-lnk').bind("click");
+        }, 5000);
     });
     $.mobile.changePage("#islands-screen", {
         transition: "slide"
@@ -671,6 +678,9 @@ $(document).on("pagebeforeshow", "#station-screen", function() {
         gotoIsland();
 
         $('#station-screen ').unbind("click");
+        setTimeout(function(){
+            $('#station-screen ').bind("click");
+        },5000);
     });
 
 
